@@ -4,8 +4,10 @@
 const { TerserPlugin } = require('next/dist/compiled/terser');
 
 module.exports = {
+  future: {
+    webpack5: true,
+  },
   webpack: (config, options) => {
-
     //
     // Use profiler-enabled React builds
     //
@@ -19,7 +21,9 @@ module.exports = {
     // Disable mangling for easier profiling
     // WARNING: This increases bundle size, DO NOT DO THIS in production!
     //
-    const terser = config.optimization.minimizer.find((plugin) => typeof plugin.options !== 'undefined' && typeof plugin.options.terserOptions !== 'undefined');
+    const terser = config.optimization.minimizer.find(
+      (plugin) => typeof plugin.options !== 'undefined' && typeof plugin.options.terserOptions !== 'undefined'
+    );
     if (terser) {
       terser.options.terserOptions = {
         ...terser.options.terserOptions,
@@ -29,5 +33,5 @@ module.exports = {
     }
 
     return config;
-  }
-}
+  },
+};
