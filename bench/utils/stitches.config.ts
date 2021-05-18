@@ -1,5 +1,5 @@
-import { createCss, StitchesCss } from '@stitches/react';
-export type { StitchesVariants } from '@stitches/react';
+import { createCss, StitchesCss } from '@stitches/core';
+export type { StitchesVariants } from '@stitches/core';
 
 const stitches = createCss({
   theme: {
@@ -240,7 +240,7 @@ const stitches = createCss({
 
 export type CSS = StitchesCss<typeof stitches>;
 
-export const { styled, css, theme, getCssString, global, keyframes, config } = stitches;
+export const { css, theme, getCssString, global, keyframes, config } = stitches;
 
 export const utils = config.utils;
 
