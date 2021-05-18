@@ -19,22 +19,24 @@ export type TestInfo = {
 type RunResult = {
   /** Sample size */
   N: number;
-  /** First run time */
+  /** First iteration in the run */
   firstIteration: IterationTime;
-  /** Last run time */
+  /** Last iteration in the run */
   lastIteration: IterationTime;
+  /** Fastest time in the run */
+  fastestIteration: IterationTime;
+  /** Slowest time in the run */
+  slowestIteration: IterationTime;
   /** Average run time */
   meanIteration: IterationTime;
   /** Median run time */
   medianIteration: IterationTime;
+  /** The variance in the results */
+  variance: number;
 };
 
-type IterationTime = {
-  /** Maps to actualDuration, which counts React's built in memoization */
-  withMemoization: number;
-  /** Maps to baseDuration, which is what would happen if the entire tree needs to be re-rendered */
-  noMemoization: number;
-};
+/** Maps to actualDuration, which includes the Profiler's own render time but only includes things that ran as a result of this direct render (so anything memoized in the subtree won't be counted if it didn't render) */
+type IterationTime = number;
 
 /**
  * This information will be passed to the TestComponent during each run
@@ -55,7 +57,7 @@ const TestAndRefresh = ({
   TestComponent: React.FunctionComponent<TestComponentProps>;
 }) => {
   /** Stores individual results in an array until the test is done and we can crunch them */
-  const iterationResults: Array<{ actualDuration: number; baseDuration: number }> = [];
+  const iterationResults: Array<number> = [];
 
   useEffect(() => {
     if (iterationResults.length !== testInfo.N) {
@@ -66,32 +68,38 @@ const TestAndRefresh = ({
     const lastIteration = iterationResults[iterationResults.length - 1];
 
     // Build the median
-    const sortedResultsMemoization = iterationResults.sort((a, b) => (a.actualDuration > b.actualDuration ? 1 : -1));
-    const sortedResultsNoMemoization = iterationResults.sort((a, b) => (a.baseDuration > b.baseDuration ? 1 : -1));
-    const medianIteration: IterationTime = {
-      withMemoization: sortedResultsMemoization[Math.round(sortedResultsMemoization.length / 2)].actualDuration,
-      noMemoization: sortedResultsNoMemoization[Math.round(sortedResultsNoMemoization.length / 2)].baseDuration,
-    };
+    const sortedResults = iterationResults.sort((a, b) => (Number(a) > Number(b) ? 1 : -1));
+    const medianIteration = sortedResults[Math.round(sortedResults.length / 2)];
+
+    const fastestIteration = sortedResults[0];
+    const slowestIteration = sortedResults[sortedResults.length - 1];
 
     // Build the mean
-    let memoizationSum = 0;
-    let noMemoizationSum = 0;
+    let sumOfIterationTime = 0;
     for (let i = 0; i < iterationResults.length; i++) {
-      memoizationSum += iterationResults[i].actualDuration;
-      noMemoizationSum += iterationResults[i].baseDuration;
+      sumOfIterationTime += iterationResults[i];
     }
-    const meanIteration: IterationTime = {
-      withMemoization: memoizationSum / iterationResults.length,
-      noMemoization: noMemoizationSum / iterationResults.length,
-    };
+    const meanIteration = sumOfIterationTime / iterationResults.length;
+
+    // Build the variance
+    let sumOfSquaredDifferences = 0;
+    for (let i = 0; i < iterationResults.length; i++) {
+      const difference = meanIteration - iterationResults[i];
+      const squaredDifference = Math.pow(difference, 2);
+      sumOfSquaredDifferences += squaredDifference;
+    }
+    const variance = sumOfSquaredDifferences / iterationResults.length;
 
     // Pop the results into the testInfo:
     testInfo.results[runIndex] = {
       N: testInfo.N,
-      firstIteration: { withMemoization: firstIteration.actualDuration, noMemoization: firstIteration.baseDuration },
-      lastIteration: { withMemoization: lastIteration.actualDuration, noMemoization: lastIteration.baseDuration },
+      firstIteration,
+      lastIteration,
+      fastestIteration,
+      slowestIteration,
       medianIteration,
       meanIteration,
+      variance,
     };
     // Serialize the testInfo and pop it back onto localStorage:
     localStorage.setItem(testInfo.testId, JSON.stringify(testInfo));
@@ -115,8 +123,7 @@ const TestAndRefresh = ({
     commitTime: number, // when React committed this update
     interactions: Set<any> // the Set of interactions belonging to this update
   ) {
-    // console.log(`actual: ${actualDuration}, base: ${baseDuration}`);
-    iterationResults.push({ actualDuration, baseDuration });
+    iterationResults.push(actualDuration);
   }
 
   /** An array with the size of N */
