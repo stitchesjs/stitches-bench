@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 
 const CreateAndMountComponent = () => {
-  const StitchesTest = dynamic(() => import('../bench/change-css-prop/stitches-css'), { ssr: false });
+  const StitchesTest = dynamic(() => import('../bench/create-and-mount-button/stitches-css'), { ssr: false });
 
   return <StitchesTest />;
 };

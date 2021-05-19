@@ -3,7 +3,10 @@ export default function Home() {
     <div>
       <ul>
         <li>
-          <a href="/create-and-mount-button">Create and mount a new button</a>
+          <a href="/css-create-and-mount-button">CSS: Create and mount a new button</a>
+        </li>
+        <li>
+          <a href="/styled-create-and-mount-button">Styled: Create and mount a new button</a>
         </li>
         <li>
           <a href="/change-a-variant">Change a variant on a mounted component</a>

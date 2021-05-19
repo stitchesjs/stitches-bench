@@ -1,6 +1,6 @@
 import React, { Profiler } from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
-import { css } from '../utils/stitches.config';
+import { css } from '../utils/stitches-css.config';
 
 const button = css('button', {
   boxSizing: 'border-box',
