@@ -146,7 +146,7 @@ export const TestRunner = ({
   iterationN,
 }: {
   /** The component to run inside the profiler */
-  TestComponent: React.FunctionComponent;
+  TestComponent: React.FunctionComponent<TestComponentProps>;
   /** How many times to run the entire test (to check for variance) */
   numberOfRuns: number;
   /** The N number of iterations to run inside each test */

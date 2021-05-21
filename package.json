@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@stitches/core": "0.1.9",
     "@stitches/react": "0.1.9",
     "@types/styled-components": "5.1.9",
     "nanoid": "^3.1.23",

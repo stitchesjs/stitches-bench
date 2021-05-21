@@ -1,8 +1,8 @@
 import React, { Profiler } from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
-import { css } from '../utils/stitches-css.config';
+import { styled } from '../utils/stitches-react.config';
 
-const button = css('button', {
+const Button = styled('button', {
   boxSizing: 'border-box',
   variants: {
     color: {
@@ -17,11 +17,8 @@ const button = css('button', {
 });
 
 const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestComponentProps) => {
-  return (
-    <button className={button({ css: { backgroundColor: 'teal', padding: '20px', marginTop: `${testIndex}px` } })}>
-      testing
-    </button>
-  );
+  let variantValue: 'blue' | 'red' = testIndex % 2 === 0 ? 'blue' : 'red';
+  return <Button color={variantValue}>testing</Button>;
 };
 
 const StitchesTest = () => {
@@ -30,9 +27,7 @@ const StitchesTest = () => {
       <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} />
 
       <div style={{ opacity: 0, pointerEvents: 'none' }}>
-        <button className={button()}>
-          we mount the button outside the test to make sure we're not clocking any mount time
-        </button>
+        <Button>we mount the button outside the test to make sure we're not clocking any mount time</Button>
       </div>
     </>
   );

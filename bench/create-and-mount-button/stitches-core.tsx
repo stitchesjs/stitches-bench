@@ -1,11 +1,11 @@
 import React, { Profiler } from 'react';
 import { TestRunner } from '../TestRunner';
-import { styled } from '../utils/stitches-styled.config';
+import { css } from '../utils/stitches-core.config';
 
 const Test = () => {
   // This purposefully creates the styled component inside the Test component
   // so that we can measure the time it takes using the React profiler
-  const Button = styled('button', {
+  const button = css({
     boxSizing: 'border-box',
     variants: {
       color: {
@@ -19,7 +19,7 @@ const Test = () => {
     },
   });
 
-  return <Button>testing</Button>;
+  return <button className={button()}>testing</button>;
 };
 
 const StitchesTest = () => {

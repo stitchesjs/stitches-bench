@@ -1,18 +1,17 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <div>
       <ul>
         <li>
-          <a href="/css-create-and-mount-button">CSS: Create and mount a new button</a>
+          <Link href="/create-and-mount-button">Create and mount a new button</Link>
         </li>
         <li>
-          <a href="/styled-create-and-mount-button">Styled: Create and mount a new button</a>
+          <Link href="/change-a-variant">Change a variant on a mounted component</Link>
         </li>
         <li>
-          <a href="/change-a-variant">Change a variant on a mounted component</a>
-        </li>
-        <li>
-          <a href="/change-css-prop">Change a value inside a CSS prop</a>
+          <Link href="/change-css-prop">Change a value inside a CSS prop</Link>
         </li>
         <li>Change the theme</li>
         <li>Sample full page</li>

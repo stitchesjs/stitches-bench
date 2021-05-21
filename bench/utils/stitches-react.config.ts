@@ -117,124 +117,111 @@ const stitches = createCss({
     light: '(prefers-color-scheme: light)',
   },
   utils: {
-    p: (config) => (value: any) => ({
-      paddingTop: value,
-      paddingBottom: value,
-      paddingLeft: value,
-      paddingRight: value,
-    }),
-    pt: (config) => (value: any) => ({
-      paddingTop: value,
-    }),
-    pr: (config) => (value: any) => ({
-      paddingRight: value,
-    }),
-    pb: (config) => (value: any) => ({
-      paddingBottom: value,
-    }),
-    pl: (config) => (value: any) => ({
-      paddingLeft: value,
-    }),
-    px: (config) => (value: any) => ({
-      paddingLeft: value,
-      paddingRight: value,
-    }),
-    py: (config) => (value: any) => ({
-      paddingTop: value,
-      paddingBottom: value,
-    }),
-
-    m: (config) => (value: any) => ({
-      marginTop: value,
-      marginBottom: value,
-      marginLeft: value,
-      marginRight: value,
-    }),
-    mt: (config) => (value: any) => ({
-      marginTop: value,
-    }),
-    mr: (config) => (value: any) => ({
-      marginRight: value,
-    }),
-    mb: (config) => (value: any) => ({
-      marginBottom: value,
-    }),
-    ml: (config) => (value: any) => ({
-      marginLeft: value,
-    }),
-    mx: (config) => (value: any) => ({
-      marginLeft: value,
-      marginRight: value,
-    }),
-    my: (config) => (value: any) => ({
-      marginTop: value,
-      marginBottom: value,
-    }),
-
-    ta: (config) => (value: any) => ({ textAlign: value }),
-
-    fd: (config) => (value: any) => ({ flexDirection: value }),
-    fw: (config) => (value: any) => ({ flexWrap: value }),
-
-    ai: (config) => (value: any) => ({ alignItems: value }),
-    ac: (config) => (value: any) => ({ alignContent: value }),
-    jc: (config) => (value: any) => ({ justifyContent: value }),
-    as: (config) => (value: any) => ({ alignSelf: value }),
-    fg: (config) => (value: any) => ({ flexGrow: value }),
-    fs: (config) => (value: any) => ({ flexShrink: value }),
-    fb: (config) => (value: any) => ({ flexBasis: value }),
-
-    bc: (config) => (value: any) => ({
-      backgroundColor: value,
-    }),
-
-    br: (config) => (value: any) => ({
-      borderRadius: value,
-    }),
-    btrr: (config) => (value: any) => ({
-      borderTopRightRadius: value,
-    }),
-    bbrr: (config) => (value: any) => ({
-      borderBottomRightRadius: value,
-    }),
-    bblr: (config) => (value: any) => ({
-      borderBottomLeftRadius: value,
-    }),
-    btlr: (config) => (value: any) => ({
-      borderTopLeftRadius: value,
-    }),
-
-    bs: (config) => (value: any) => ({ boxShadow: value }),
-
-    lh: (config) => (value: any) => ({ lineHeight: value }),
-
-    ox: (config) => (value: any) => ({ overflowX: value }),
-    oy: (config) => (value: any) => ({ overflowY: value }),
-
-    pe: (config) => (value: any) => ({ pointerEvents: value }),
-    us: (config) => (value: any) => ({ WebkitUserSelect: value, userSelect: value }),
-
-    size: (config) => (value: any) => ({
-      width: value,
-      height: value,
-    }),
-
-    linearGradient: (config) => (value: any) => ({
-      backgroundImage: `linear-gradient(${value})`,
-    }),
-
-    appearance: (config) => (value) => ({
-      WebkitAppearance: value,
-      appearance: value,
-    }),
-    userSelect: (config) => (value) => ({
-      WebkitUserSelect: value,
-      userSelect: value,
-    }),
-    backgroundClip: (config) => (value) => ({
-      WebkitBackgroundClip: value,
-      backgroundClip: value,
-    }),
+    //   p: (config) => (value: any) => ({
+    //     paddingTop: value,
+    //     paddingBottom: value,
+    //     paddingLeft: value,
+    //     paddingRight: value,
+    //   }),
+    //   pt: (config) => (value: any) => ({
+    //     paddingTop: value,
+    //   }),
+    //   pr: (config) => (value: any) => ({
+    //     paddingRight: value,
+    //   }),
+    //   pb: (config) => (value: any) => ({
+    //     paddingBottom: value,
+    //   }),
+    //   pl: (config) => (value: any) => ({
+    //     paddingLeft: value,
+    //   }),
+    //   px: (config) => (value: any) => ({
+    //     paddingLeft: value,
+    //     paddingRight: value,
+    //   }),
+    //   py: (config) => (value: any) => ({
+    //     paddingTop: value,
+    //     paddingBottom: value,
+    //   }),
+    //   m: (config) => (value: any) => ({
+    //     marginTop: value,
+    //     marginBottom: value,
+    //     marginLeft: value,
+    //     marginRight: value,
+    //   }),
+    //   mt: (config) => (value: any) => ({
+    //     marginTop: value,
+    //   }),
+    //   mr: (config) => (value: any) => ({
+    //     marginRight: value,
+    //   }),
+    //   mb: (config) => (value: any) => ({
+    //     marginBottom: value,
+    //   }),
+    //   ml: (config) => (value: any) => ({
+    //     marginLeft: value,
+    //   }),
+    //   mx: (config) => (value: any) => ({
+    //     marginLeft: value,
+    //     marginRight: value,
+    //   }),
+    //   my: (config) => (value: any) => ({
+    //     marginTop: value,
+    //     marginBottom: value,
+    //   }),
+    //   ta: (config) => (value: any) => ({ textAlign: value }),
+    //   fd: (config) => (value: any) => ({ flexDirection: value }),
+    //   fw: (config) => (value: any) => ({ flexWrap: value }),
+    //   ai: (config) => (value: any) => ({ alignItems: value }),
+    //   ac: (config) => (value: any) => ({ alignContent: value }),
+    //   jc: (config) => (value: any) => ({ justifyContent: value }),
+    //   as: (config) => (value: any) => ({ alignSelf: value }),
+    //   fg: (config) => (value: any) => ({ flexGrow: value }),
+    //   fs: (config) => (value: any) => ({ flexShrink: value }),
+    //   fb: (config) => (value: any) => ({ flexBasis: value }),
+    //   bc: (config) => (value: any) => ({
+    //     backgroundColor: value,
+    //   }),
+    //   br: (config) => (value: any) => ({
+    //     borderRadius: value,
+    //   }),
+    //   btrr: (config) => (value: any) => ({
+    //     borderTopRightRadius: value,
+    //   }),
+    //   bbrr: (config) => (value: any) => ({
+    //     borderBottomRightRadius: value,
+    //   }),
+    //   bblr: (config) => (value: any) => ({
+    //     borderBottomLeftRadius: value,
+    //   }),
+    //   btlr: (config) => (value: any) => ({
+    //     borderTopLeftRadius: value,
+    //   }),
+    //   bs: (config) => (value: any) => ({ boxShadow: value }),
+    //   lh: (config) => (value: any) => ({ lineHeight: value }),
+    //   ox: (config) => (value: any) => ({ overflowX: value }),
+    //   oy: (config) => (value: any) => ({ overflowY: value }),
+    //   pe: (config) => (value: any) => ({ pointerEvents: value }),
+    //   us: (config) => (value: any) => ({ WebkitUserSelect: value, userSelect: value }),
+    //   size: (config) => (value: any) => ({
+    //     width: value,
+    //     height: value,
+    //   }),
+    //   linearGradient: (config) => (value: any) => ({
+    //     backgroundImage: `linear-gradient(${value})`,
+    //   }),
+    //   appearance: (config) => (value) => ({
+    //     WebkitAppearance: value,
+    //     appearance: value,
+    //   }),
+    //   userSelect: (config) => (value) => ({
+    //     WebkitUserSelect: value,
+    //     userSelect: value,
+    //   }),
+    //   backgroundClip: (config) => (value) => ({
+    //     WebkitBackgroundClip: value,
+    //     backgroundClip: value,
+    //   }),
   },
 });
 
