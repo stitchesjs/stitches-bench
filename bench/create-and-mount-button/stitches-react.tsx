@@ -1,14 +1,14 @@
 import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
 import { styled } from '../utils/stitches-react.config';
-import { styles } from './button';
+import { buttonStyles } from '../utils/buttonStyles';
 
 const Test = ({ testIndex }: TestComponentProps) => {
   // This purposefully creates the styled component inside the Test component
   // so that we can measure the time it takes using the React profiler
   const Button = styled('button', {
     '--test-index': testIndex,
-    ...(styles as any),
+    ...(buttonStyles as any),
   });
 
   return <Button>testing</Button>;

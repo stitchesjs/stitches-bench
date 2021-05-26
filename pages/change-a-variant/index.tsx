@@ -9,9 +9,6 @@ export default function Home() {
         <li>
           <Link href="change-a-variant/stitches-react">Stitches React</Link>
         </li>
-        <li>
-          <Link href="change-a-variant/styled-components">Styled Components</Link>
-        </li>
       </ul>
     </div>
   );
