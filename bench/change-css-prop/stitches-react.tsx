@@ -1,29 +1,30 @@
 import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
+import { buttonStyles } from '../utils/buttonStyles';
 import { styled } from '../utils/stitches-react.config';
 
 const Button = styled('button', {
-  boxSizing: 'border-box',
-  variants: {
-    color: {
-      red: {
-        color: 'red',
-      },
-      blue: {
-        color: 'blue',
-      },
-    },
-  },
+  ...(buttonStyles as any),
 });
 
-const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestComponentProps) => {
-  return <Button css={{ backgroundColor: 'teal', padding: '20px', marginTop: `${testIndex}px` }}>testing</Button>;
+const Test = ({ testIndex }: TestComponentProps) => {
+  return (
+    <Button
+      css={{
+        '--test-index': testIndex,
+        backgroundColor: `hsl(${Math.floor(Math.random() * 360)} 80% 80%)`,
+        padding: '20px',
+      }}
+    >
+      testing
+    </Button>
+  );
 };
 
 const StitchesTest = () => {
   return (
     <>
-      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} />
+      <TestRunner numberOfRuns={10} iterationN={1000} TestComponent={Test} />
 
       <div style={{ opacity: 0, pointerEvents: 'none' }}>
         <Button>we mount the button outside the test to make sure we're not clocking any mount time</Button>

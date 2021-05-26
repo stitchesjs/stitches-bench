@@ -1,5 +1,6 @@
 import React, { Profiler, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import NextLink from 'next/link';
 import { createId } from '../bench/utils/createId';
 import { TestResults } from './TestResults';
 
@@ -131,11 +132,13 @@ const TestAndRefresh = ({
 
   return (
     <>
-      {loops.map((value, index) => (
-        <Profiler key={index} id={testInfo.testId} onRender={handleProfilerData}>
-          <TestComponent testIndex={index} />
-        </Profiler>
-      ))}
+      {loops.map((value, index) => {
+        return (
+          <Profiler key={index} id={testInfo.testId} onRender={handleProfilerData}>
+            <TestComponent testIndex={index} />
+          </Profiler>
+        );
+      })}
     </>
   );
 };
@@ -171,7 +174,7 @@ export const TestRunner = ({
     };
     localStorage.setItem(newTestId, JSON.stringify(testInfo));
 
-    return <a href={`?testId=${newTestId}&runIndex=0`}>start test</a>;
+    return <NextLink href={`?testId=${newTestId}&runIndex=0`}>start test</NextLink>;
   } else if (typeof testId === 'string') {
     // We are mid-test or finished with a test
     if (typeof finished !== 'undefined') {

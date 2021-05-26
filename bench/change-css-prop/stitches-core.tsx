@@ -1,24 +1,23 @@
 import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
+import { buttonStyles } from '../utils/buttonStyles';
 import { css } from '../utils/stitches-core.config';
 
 const button = css({
-  boxSizing: 'border-box',
-  variants: {
-    color: {
-      red: {
-        color: 'red',
-      },
-      blue: {
-        color: 'blue',
-      },
-    },
-  },
+  ...(buttonStyles as any),
 });
 
-const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestComponentProps) => {
+const Test = ({ testIndex }: TestComponentProps) => {
   return (
-    <button className={button({ css: { backgroundColor: 'teal', padding: '20px', marginTop: `${testIndex}px` } })}>
+    <button
+      className={button({
+        css: {
+          '--test-index': testIndex,
+          backgroundColor: `hsl(${Math.floor(Math.random() * 360)} 80% 80%)`,
+          padding: '20px',
+        },
+      })}
+    >
       testing
     </button>
   );
@@ -27,7 +26,7 @@ const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestCo
 const StitchesTest = () => {
   return (
     <>
-      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} />
+      <TestRunner numberOfRuns={10} iterationN={1000} TestComponent={Test} />
 
       <div style={{ opacity: 0, pointerEvents: 'none' }}>
         <button className={button()}>
