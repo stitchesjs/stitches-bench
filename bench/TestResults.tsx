@@ -54,23 +54,36 @@ export const TestResults = ({ testInfo }: { testInfo: TestInfo }) => {
         <li>Take first run for most accurate "cold start" results.</li>
       </ul>
 
-      <div>
-        {[...Array(testInfo.numberOfRuns)].map((_val, runIndex) => {
-          return (
-            <div key={runIndex}>
-              <h3>Run {runIndex + 1}</h3>
-              <ResultTable result={testInfo.results[runIndex]} />
-            </div>
-          );
-        })}
-      </div>
-
-      <hr />
-
-      <div>
-        <h3>Average</h3>
-        <ResultTable result={averageInfo} />
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th />
+            <th>First render</th>
+            <th>Last render</th>
+            <th>Mean</th>
+            <th>Median</th>
+            <th>Fastest</th>
+            <th>Slowest</th>
+            <th>SD</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[...Array(testInfo.numberOfRuns)].map((_val, runIndex) => {
+            return (
+              <tr key={runIndex}>
+                <th>Run {runIndex + 1}</th>
+                <ResultCells result={testInfo.results[runIndex]} />
+              </tr>
+            );
+          })}
+        </tbody>
+        <tfoot>
+          <tr style={{ borderTop: '1px solid' }}>
+            <th>Average</th>
+            <ResultCells result={averageInfo} />
+          </tr>
+        </tfoot>
+      </table>
 
       <hr />
 
@@ -84,7 +97,7 @@ export const TestResults = ({ testInfo }: { testInfo: TestInfo }) => {
   );
 };
 
-function ResultTable({ result }) {
+function ResultCells({ result }) {
   const {
     firstIteration,
     lastIteration,
@@ -97,29 +110,14 @@ function ResultTable({ result }) {
 
   const alertLastRender = lastIteration > firstIteration * 1.1 ? { color: 'orange' } : undefined;
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>First render</th>
-          <th style={alertLastRender}>Last render</th>
-          <th>Mean</th>
-          <th>Median</th>
-          <th>Fastest</th>
-          <th>Slowest</th>
-          <th>SD</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{firstIteration.toFixed(6)}</td>
-          <td style={alertLastRender}>{lastIteration.toFixed(6)}</td>
-          <td>{meanIteration.toFixed(6)}</td>
-          <td>{medianIteration.toFixed(6)}</td>
-          <td>{fastestIteration.toFixed(6)}</td>
-          <td>{slowestIteration.toFixed(6)}</td>
-          <td>{Math.sqrt(variance).toFixed(6)}</td>
-        </tr>
-      </tbody>
-    </table>
+    <>
+      <td>{firstIteration.toFixed(6)}</td>
+      <td style={alertLastRender}>{lastIteration.toFixed(6)}</td>
+      <td>{meanIteration.toFixed(6)}</td>
+      <td>{medianIteration.toFixed(6)}</td>
+      <td>{fastestIteration.toFixed(6)}</td>
+      <td>{slowestIteration.toFixed(6)}</td>
+      <td>{Math.sqrt(variance).toFixed(6)}</td>
+    </>
   );
 }
