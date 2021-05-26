@@ -78,7 +78,7 @@ export const TestResults = ({ testInfo }: { testInfo: TestInfo }) => {
           })}
         </tbody>
         <tfoot>
-          <tr style={{ borderTop: '1px solid' }}>
+          <tr>
             <th>Average</th>
             <ResultCells result={averageInfo} />
           </tr>
