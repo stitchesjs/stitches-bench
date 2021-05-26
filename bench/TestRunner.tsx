@@ -16,7 +16,7 @@ export type TestInfo = {
 };
 
 /** The results from one individual sample run */
-type RunResult = {
+export type RunResult = {
   /** Sample size */
   N: number;
   /** First iteration in the run */
