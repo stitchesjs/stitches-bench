@@ -13,6 +13,9 @@ export default function Home() {
         <li>
           <Link href="/change-css-prop">Change a value inside a CSS prop</Link>
         </li>
+        <li>
+          <Link href="/create-landing-page">Create landing page</Link>
+        </li>
         <li>Change the theme</li>
         <li>Sample full page</li>
       </ul>

@@ -1,4 +1,4 @@
-import React, { Profiler } from 'react';
+import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
 import { styled } from '../utils/stitches-react.config';
 

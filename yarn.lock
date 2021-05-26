@@ -214,6 +214,11 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/context-base/-/context-base-0.14.0.tgz#c67fc20a4d891447ca1a855d7d70fa79a3533001"
   integrity sha512-sDOAZcYwynHFTbLo6n8kIbLiVF3a3BLkrmehJUyEbT9F+Smbi47kLGS2gG2g0fjBLR/Lr1InPD7kXL7FaTqEkw==
 
+"@radix-ui/colors@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@radix-ui/colors/-/colors-0.1.6.tgz#6e568624e13dc3993cc5ea782c31727b56f706a0"
+  integrity sha512-t9KHKBvksuvq4M0I7nT6DReJNuYCvDXwH4PRkFu/GIQPZveV9huZ9t9yJ/1Fh5dRX49cMMvb7DzRgKU4/uHdlg==
+
 "@stitches/core@0.1.9", "@stitches/core@^0.1.9":
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.9.tgz#6cc42ae6052f6900f9add164232449ff8d62c4ba"

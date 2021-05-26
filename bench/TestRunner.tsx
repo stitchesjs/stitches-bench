@@ -1,4 +1,4 @@
-import React, { Profiler, useEffect, useLayoutEffect } from 'react';
+import React, { Profiler, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { createId } from '../bench/utils/createId';
 import { TestResults } from './TestResults';
