@@ -47,18 +47,3 @@ export const styles = {
   fontSize: '13px',
   lineHeight: '25px',
 };
-
-export const stitchesVariants = {
-  variants: {
-    color: {
-      red: {
-        color: 'red',
-      },
-      blue: {
-        color: 'blue',
-      },
-    },
-  },
-};
-
-export const interpolationVariants = {};

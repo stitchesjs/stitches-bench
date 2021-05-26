@@ -8,7 +8,7 @@ const Test = ({ testIndex }: TestComponentProps) => {
   // so that we can measure the time it takes using the React profiler
   const button = css({
     '--test-index': testIndex,
-    ...styles,
+    ...(styles as any),
   });
 
   return <button className={button()}>testing</button>;
