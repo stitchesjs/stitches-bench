@@ -9,14 +9,9 @@ const Button = styled('button', {
 });
 
 const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestComponentProps) => {
-  const colors = ['red', 'blue'];
-  const sizes = ['1', '2'];
-
-  const randomColor = Math.floor(Math.random() * colors.length);
-  const randomSize = Math.floor(Math.random() * sizes.length);
   const variants = {
-    variant: colors[randomColor],
-    size: sizes[randomSize],
+    variant: testIndex % 2 === 0 ? 'red' : 'blue',
+    size: testIndex % 2 === 0 ? '1' : '2',
   };
   return <Button {...variants}>testing</Button>;
 };
