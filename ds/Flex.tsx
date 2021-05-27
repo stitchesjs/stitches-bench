@@ -1,6 +1,4 @@
-import { styled } from './stitches-ds.config';
-
-export const Flex = styled('div', {
+export const flex = {
   boxSizing: 'border-box',
   display: 'flex',
 
@@ -97,4 +95,4 @@ export const Flex = styled('div', {
     justify: 'start',
     wrap: 'noWrap',
   },
-});
+};

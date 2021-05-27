@@ -1,9 +1,4 @@
-import { styled } from '../bench/utils/stitches-react.config';
-
-const DEFAULT_TAG = 'span';
-
-export const Text = styled(DEFAULT_TAG, {
-  // Reset
+export const text = {
   lineHeight: '1',
   margin: '0',
   fontWeight: 400,
@@ -233,4 +228,4 @@ export const Text = styled(DEFAULT_TAG, {
     size: '3',
     variant: 'contrast',
   },
-});
+};

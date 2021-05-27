@@ -1,15 +1,53 @@
-import { Box } from '../../ds/Box';
-import { Flex } from '../../ds/Flex';
-import { Text } from '../../ds/Text';
-import { Link } from '../../ds/Link';
-import { Section } from '../../ds/Section';
-import { Grid } from '../../ds/Grid';
-import { Container } from '../../ds/Container';
-import { Code } from '../../ds/Code';
-import { Button } from '../../ds/Button';
+import { styled } from '../../ds/stitches-ds.config';
+import { box } from '../../ds/box';
+import { flex } from '../../ds/flex';
+import { text } from '../../ds/text';
+import { link } from '../../ds/link';
+import { section } from '../../ds/section';
+import { grid } from '../../ds/grid';
+import { container } from '../../ds/container';
+import { code } from '../../ds/code';
+import { button } from '../../ds/button';
 import { Separator } from '../../ds/Separator';
 
-export function LandingPage() {
+export function LandingPage({ testIndex }) {
+  const Box = styled('div', {
+    '--test-index': testIndex,
+    ...box,
+  });
+  const Flex = styled('div', {
+    '--test-index': testIndex,
+    ...flex,
+  });
+  const Text = styled('span', {
+    '--test-index': testIndex,
+    ...text,
+  });
+  const Link = styled('a', {
+    '--test-index': testIndex,
+    ...link,
+  });
+  const Section = styled('section', {
+    '--test-index': testIndex,
+    ...section,
+  });
+  const Grid = styled('div', {
+    '--test-index': testIndex,
+    ...grid,
+  });
+  const Container = styled('div', {
+    '--test-index': testIndex,
+    ...container,
+  });
+  const Code = styled('code', {
+    '--test-index': testIndex,
+    ...code,
+  });
+  const Button = styled('button', {
+    '--test-index': testIndex,
+    ...button,
+  });
+
   return (
     <Box>
       <Flex

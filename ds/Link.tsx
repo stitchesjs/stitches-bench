@@ -1,8 +1,4 @@
-import { styled } from './stitches-ds.config';
-
-const DEFAULT_TAG = 'a';
-
-export const Link = styled(DEFAULT_TAG, {
+export const link = {
   alignItems: 'center',
   gap: '$1',
   flexShrink: 0,
@@ -57,4 +53,4 @@ export const Link = styled(DEFAULT_TAG, {
   defaultVariants: {
     variant: 'contrast',
   },
-});
+};

@@ -1,8 +1,4 @@
-import { styled } from './stitches-ds.config';
-
-const DEFAULT_TAG = 'code';
-
-export const Code = styled(DEFAULT_TAG, {
+export const code = {
   fontFamily: '$mono',
   fontSize: 'max(12px, 85%)',
   whiteSpace: 'nowrap',
@@ -23,4 +19,4 @@ export const Code = styled(DEFAULT_TAG, {
   defaultVariants: {
     variant: 'violet',
   },
-});
+};

@@ -1,8 +1,4 @@
-import { styled } from './stitches-ds.config';
-
-const DEFAULT_TAG = 'section';
-
-export const Section = styled(DEFAULT_TAG, {
+export const section = {
   // Reset
   boxSizing: 'border-box',
   flexShrink: 0,
@@ -31,4 +27,4 @@ export const Section = styled(DEFAULT_TAG, {
   defaultVariants: {
     size: '3',
   },
-});
+};

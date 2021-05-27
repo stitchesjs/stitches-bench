@@ -1,8 +1,4 @@
-import { styled } from './stitches-ds.config';
-
-const DEFAULT_TAG = 'div';
-
-export const Container = styled(DEFAULT_TAG, {
+export const container = {
   // Reset
   boxSizing: 'border-box',
   flexShrink: 0,
@@ -31,4 +27,4 @@ export const Container = styled(DEFAULT_TAG, {
   defaultVariants: {
     size: '4',
   },
-});
+};

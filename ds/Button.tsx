@@ -1,9 +1,4 @@
-import { styled } from './stitches-ds.config';
-
-const DEFAULT_TAG = 'button';
-
-export const Button = styled(DEFAULT_TAG, {
-  // Reset
+export const button = {
   all: 'unset',
   alignItems: 'center',
   boxSizing: 'border-box',
@@ -320,4 +315,4 @@ export const Button = styled(DEFAULT_TAG, {
     size: '1',
     variant: 'gray',
   },
-});
+};
