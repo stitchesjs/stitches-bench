@@ -8,7 +8,7 @@ import { grid } from '../../ds/grid';
 import { container } from '../../ds/container';
 import { code } from '../../ds/code';
 import { button } from '../../ds/button';
-import { Separator } from '../../ds/Separator';
+import { separator } from '../../ds/separator';
 
 export function LandingPage({ testIndex }) {
   const Box = styled('div', {
@@ -46,6 +46,10 @@ export function LandingPage({ testIndex }) {
   const Button = styled('button', {
     '--test-index': testIndex,
     ...button,
+  });
+  const Separator = styled('div', {
+    '--test-index': testIndex,
+    ...separator,
   });
 
   return (

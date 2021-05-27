@@ -1,6 +1,4 @@
-import { styled } from './stitches-ds.config';
-
-export const Separator = styled('div', {
+export const separator = {
   border: 'none',
   margin: 0,
   flexShrink: 0,
@@ -36,4 +34,4 @@ export const Separator = styled('div', {
   defaultVariants: {
     size: '1',
   },
-});
+};
