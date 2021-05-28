@@ -9,6 +9,12 @@ export default function Home() {
         <li>
           <Link href="change-css-prop/stitches-react">Stitches React</Link>
         </li>
+        <li>
+          <Link href="change-css-prop/styled-components">Styled Components</Link>
+        </li>
+        <li>
+          <Link href="change-css-prop/emotion">Emotion</Link>
+        </li>
       </ul>
     </div>
   );

@@ -108,3 +108,10 @@ export const buttonVariants = {
     },
   },
 };
+
+export const buttonInterpolatedVariants = (props) => ({
+  ...(props.size === '1' ? buttonVariants.variants.size['1'] : {}),
+  ...(props.size === '2' ? buttonVariants.variants.size['2'] : {}),
+  ...(props.variant === 'blue' ? buttonVariants.variants.variant['blue'] : {}),
+  ...(props.variant === 'red' ? buttonVariants.variants.variant['red'] : {}),
+});
