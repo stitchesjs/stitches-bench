@@ -17,7 +17,9 @@ export default function Home() {
           <Link href="/create-landing-page">Create landing page</Link>
         </li>
         <li>Change the theme</li>
-        <li>Sample full page</li>
+        <li>
+          <Link href="/full-render-manual-test">Full render - manual testing</Link>
+        </li>
       </ul>
     </div>
   );
