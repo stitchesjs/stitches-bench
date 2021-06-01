@@ -1,7 +1,7 @@
 import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
 import { buttonStyles, buttonVariants } from '../utils/buttonStyles';
-import { styled } from '../utils/stitches-react.config';
+import { styled } from '../utils/stitches-react.config-v019';
 
 const Button = styled('button', {
   ...(buttonStyles as any),

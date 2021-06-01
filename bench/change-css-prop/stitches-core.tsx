@@ -26,7 +26,7 @@ const Test = ({ testIndex }: TestComponentProps) => {
 const StitchesTest = () => {
   return (
     <>
-      <TestRunner numberOfRuns={10} iterationN={1000} TestComponent={Test} />
+      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} />
 
       <div style={{ opacity: 0, pointerEvents: 'none' }}>
         <button className={button()}>

@@ -20,6 +20,9 @@ export default function Home() {
         <li>
           <Link href="/full-render-manual-test">Full render - manual testing</Link>
         </li>
+        <li>
+          <Link href="/sierpinski-triangle">Sierpinski Triangle</Link>
+        </li>
       </ul>
     </div>
   );

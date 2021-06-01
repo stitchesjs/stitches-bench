@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '../../bench/utils/stitches-react.config';
+import { styled } from '../../bench/utils/stitches-react.config-v019';
 
 const Box = styled('div', {
   display: 'inline-block',
@@ -14,7 +14,7 @@ const Box = styled('div', {
 export default function App() {
   return (
     <>
-      <h1>CSSOM</h1>
+      <h1>Stitches React v0.1.9</h1>
       {Array(1000)
         .fill(1)
         .map((_, i) => (
