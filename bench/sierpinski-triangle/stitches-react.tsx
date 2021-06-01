@@ -32,7 +32,7 @@ const Dot = styled(View, {
 
 const targetSize = 10;
 
-export function SierpinskiTriangle({ testIndex, x = 0, y = 0, depth = 0, s: _s = 200 }) {
+function SierpinskiTriangle({ testIndex, x = 0, y = 0, depth = 0, s: _s = 200 }) {
   let s = _s;
 
   if (Dot) {
