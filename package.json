@@ -12,7 +12,7 @@
     "@radix-ui/colors": "^0.1.6",
     "@stitches/core": "0.2.0-canary.0",
     "@stitches/core-v019": "npm:@stitches/core@0.1.9",
-    "@stitches/react": "0.2.0-canary.0",
+    "@stitches/react": "0.2.0-canary.4",
     "@stitches/react-alpha": "npm:@stitches/react@0.0.3-canary.4",
     "@stitches/react-v019": "npm:@stitches/react@0.1.9",
     "d3-scale-chromatic": "^2.0.0",
