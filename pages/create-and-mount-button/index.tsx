@@ -10,7 +10,7 @@ export default function Home() {
           <Link href="create-and-mount-button/stitches-react">Stitches React</Link>
         </li>
         <li>
-          <Link href="create-and-mount-button/stitches-react-v019">Stitches React v01.9</Link>
+          <Link href="create-and-mount-button/stitches-react-v019">Stitches React v0.1.9</Link>
         </li>
         <li>
           <Link href="create-and-mount-button/styled-components">Styled Components</Link>

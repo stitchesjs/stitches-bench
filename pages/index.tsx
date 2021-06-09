@@ -16,7 +16,9 @@ export default function Home() {
         <li>
           <Link href="/create-landing-page">Create landing page</Link>
         </li>
-        <li>Change the theme</li>
+        <li>
+          <Link href="/create-theme">Create theme</Link>
+        </li>
         <li>
           <Link href="/full-render-manual-test">Full render - manual testing</Link>
         </li>
