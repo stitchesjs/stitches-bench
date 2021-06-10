@@ -25,6 +25,12 @@ export default function Home() {
         <li>
           <Link href="/sierpinski-triangle">Sierpinski Triangle</Link>
         </li>
+        <li>
+          <Link href="/mount-deep-tree">Mount deep tree</Link>
+        </li>
+        <li>
+          <Link href="/mount-wide-tree">Mount wide tree</Link>
+        </li>
       </ul>
     </div>
   );
