@@ -364,10 +364,10 @@
   dependencies:
     "@stitches/core" "^0.1.9"
 
-"@stitches/react@0.2.0-canary.4":
-  version "0.2.0-canary.4"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.2.0-canary.4.tgz#0584c04fe58198dea7396685e3db0fd56570b306"
-  integrity sha512-99hROhqj9rzc7AVVyEy54t61hIPmEGEjDqZXiTvJrvtJOnSK9vgaVofYkU785LgdDAaHRQfjJRfpIIJR3sCU8w==
+"@stitches/react@0.2.0-canary.5":
+  version "0.2.0-canary.5"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.2.0-canary.5.tgz#52c48ed7a092997fbb85bead1f22fcf41ce4de9b"
+  integrity sha512-Ym4tLUmKpSQOwwsDIAGGWsz++QD+vO63geEJUzxg6pqDEb8svO4g8aJg5XmOUS8RDhzyh4abaX6hR6/TAZwj1A==
 
 "@types/hoist-non-react-statics@*":
   version "3.3.1"
