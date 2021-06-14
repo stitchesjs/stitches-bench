@@ -1,18 +1,36 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <div>
       <ul>
         <li>
-          <a href="/create-and-mount-button">Create and mount a new button</a>
+          <Link href="/create-and-mount-button">Create and mount a new button</Link>
         </li>
         <li>
-          <a href="/change-a-variant">Change a variant on a mounted component</a>
+          <Link href="/change-a-variant">Change a variant on a mounted component</Link>
         </li>
         <li>
-          <a href="/change-css-prop">Change a value inside a CSS prop</a>
+          <Link href="/change-css-prop">Change a value inside a CSS prop</Link>
         </li>
-        <li>Change the theme</li>
-        <li>Sample full page</li>
+        <li>
+          <Link href="/create-landing-page">Create landing page</Link>
+        </li>
+        <li>
+          <Link href="/create-theme">Create theme</Link>
+        </li>
+        <li>
+          <Link href="/full-render-manual-test">Full render - manual testing</Link>
+        </li>
+        <li>
+          <Link href="/sierpinski-triangle">Sierpinski Triangle</Link>
+        </li>
+        <li>
+          <Link href="/mount-deep-tree">Mount deep tree</Link>
+        </li>
+        <li>
+          <Link href="/mount-wide-tree">Mount wide tree</Link>
+        </li>
       </ul>
     </div>
   );

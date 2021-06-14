@@ -1,4 +1,4 @@
-import React, { Profiler, useEffect, useLayoutEffect } from 'react';
+import React, { Profiler, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { createId } from '../bench/utils/createId';
 import { TestResults } from './TestResults';
@@ -16,7 +16,7 @@ export type TestInfo = {
 };
 
 /** The results from one individual sample run */
-type RunResult = {
+export type RunResult = {
   /** Sample size */
   N: number;
   /** First iteration in the run */
@@ -131,11 +131,13 @@ const TestAndRefresh = ({
 
   return (
     <>
-      {loops.map((value, index) => (
-        <Profiler key={index} id={testInfo.testId} onRender={handleProfilerData}>
-          <TestComponent testIndex={index} />
-        </Profiler>
-      ))}
+      {loops.map((value, index) => {
+        return (
+          <Profiler key={index} id={testInfo.testId} onRender={handleProfilerData}>
+            <TestComponent testIndex={index} />
+          </Profiler>
+        );
+      })}
     </>
   );
 };
@@ -146,7 +148,7 @@ export const TestRunner = ({
   iterationN,
 }: {
   /** The component to run inside the profiler */
-  TestComponent: React.FunctionComponent;
+  TestComponent: React.FunctionComponent<TestComponentProps>;
   /** How many times to run the entire test (to check for variance) */
   numberOfRuns: number;
   /** The N number of iterations to run inside each test */

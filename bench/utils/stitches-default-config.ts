@@ -1,7 +1,4 @@
-import { createCss, StitchesCss } from '@stitches/core';
-export type { StitchesVariants } from '@stitches/core';
-
-const stitches = createCss({
+export const config = {
   theme: {
     colors: {
       // semantic colors
@@ -236,15 +233,9 @@ const stitches = createCss({
       backgroundClip: value,
     }),
   },
-});
+};
 
-export type CSS = StitchesCss<typeof stitches>;
-
-export const { css, theme, getCssString, global, keyframes, config } = stitches;
-
-export const utils = config.utils;
-
-export const darkTheme = theme('dark-theme', {
+export const darkThemeConfig = {
   colors: {
     hiContrast: '$slate1000',
     loContrast: '$slate000',
@@ -297,4 +288,4 @@ export const darkTheme = theme('dark-theme', {
     green900: 'hsl(136 50% 55.1%)',
     green1000: 'hsl(137 72% 94%)',
   },
-});
+};

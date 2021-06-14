@@ -1,24 +1,19 @@
-import React, { Profiler } from 'react';
+import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
-import { css } from '../utils/stitches.config';
+import { buttonStyles, buttonVariants } from '../utils/buttonStyles';
+import { css } from '../utils/stitches-core.config';
 
-const button = css('button', {
-  boxSizing: 'border-box',
-  variants: {
-    color: {
-      red: {
-        color: 'red',
-      },
-      blue: {
-        color: 'blue',
-      },
-    },
-  },
+const button = css({
+  ...(buttonStyles as any),
+  ...(buttonVariants as any),
 });
 
 const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestComponentProps) => {
-  let variantValue: 'blue' | 'red' = testIndex % 2 === 0 ? 'blue' : 'red';
-  return <button className={button({ color: variantValue })}>testing</button>;
+  const variants = {
+    variant: testIndex % 2 === 0 ? 'red' : 'blue',
+    size: testIndex % 2 === 0 ? '1' : '2',
+  };
+  return <button className={button({ ...variants })}>testing</button>;
 };
 
 const StitchesTest = () => {
