@@ -81,7 +81,7 @@ export function SierpinskiTriangle({ testIndex, x = 0, y = 0, depth = 0, s: _s =
 }
 
 const StitchesTest = () => {
-  return <TestRunner numberOfRuns={1} iterationN={2} TestComponent={SierpinskiTriangle as any} />;
+  return <TestRunner numberOfRuns={3} iterationN={50} TestComponent={SierpinskiTriangle as any} />;
 };
 
 export default StitchesTest;

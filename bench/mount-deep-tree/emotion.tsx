@@ -26,30 +26,35 @@ export const Test = ({ testIndex }: TestComponentProps) => {
     }
   };
 
-  const View = styled.div`
-    align-items: stretch;
-    border-width: 0;
-    border-style: solid;
-    box-sizing: border-box;
-    display: flex;
-    flex-basis: auto;
-    flex-direction: column;
-    flex-shrink: 0;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    min-height: 0;
-    min-width: 0;
-  `;
+  const View = styled('div')({
+    alignItems: 'stretch',
+    borderWidth: '0',
+    borderStyle: 'solid',
+    boxSizing: 'border-box',
+    display: 'flex',
+    flexBasis: 'auto',
+    flexDirection: 'column',
+    flexShrink: 0,
+    margin: '0',
+    padding: '0',
+    position: 'relative',
+    minHeight: '0',
+    minWidth: '0',
+  });
 
-  const Box = styled(View)`
-    align-self: flex-start;
-    flex-direction: ${(props: any) => (props.layout === 'column' ? 'column' : 'row')};
-    padding: ${(props: any) => (props.outer ? '4px' : '0')};
-    ${(props: any) => props.fixed && 'height:6px;'}
-    ${(props: any) => props.fixed && 'width:6px;'}
-		background-color: ${(props: any) => getColor(props.color)};
-  `;
+  const Box = styled(View)((props: any) => ({
+    alignSelf: 'flex-start',
+    flexDirection: props.layout === 'column' ? ('column' as any) : ('row' as any),
+    padding: props.outer ? '4px' : '0',
+    ...(props.fixed
+      ? {
+          height: '6px',
+          width: '6px',
+        }
+      : {}),
+
+    backgroundColor: getColor(props.color),
+  }));
 
   return <Tree breadth={2} depth={7} id={0} wrap={1} box={Box} />;
 };
