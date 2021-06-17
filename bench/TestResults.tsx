@@ -49,17 +49,17 @@ export const TestResults = ({ testInfo }: { testInfo: TestInfo }) => {
       <div>Ran test: {testInfo.numberOfRuns} times</div>
 
       <ul>
-        <h3>Run instructions</h3>
-        <li>Check across runs for drastic differences, should be near identical.</li>
-        <li>Take first run for most accurate "cold start" results.</li>
+        <h3>Instructions</h3>
+        <li>Check across tests for drastic differences, should be near identical.</li>
+        <li>Take first test for most accurate "cold start" results.</li>
       </ul>
 
       <table>
         <thead>
           <tr>
             <th />
-            <th>First render</th>
-            <th>Last render</th>
+            <th>First run</th>
+            <th>Last run</th>
             <th>Mean</th>
             <th>Median</th>
             <th>Fastest</th>
@@ -71,7 +71,7 @@ export const TestResults = ({ testInfo }: { testInfo: TestInfo }) => {
           {[...Array(testInfo.numberOfRuns)].map((_val, runIndex) => {
             return (
               <tr key={runIndex}>
-                <th>Run {runIndex + 1}</th>
+                <th>Test {runIndex + 1}</th>
                 <ResultCells result={testInfo.results[runIndex]} />
               </tr>
             );
@@ -88,7 +88,7 @@ export const TestResults = ({ testInfo }: { testInfo: TestInfo }) => {
       <hr />
 
       <ul>
-        <li>Last render should be about the same or faster than the first render</li>
+        <li>Last run should be about the same or faster than the first run</li>
         <li>
           Standard deviation should only be a few milliseconds or something is causing renders to be wildly different
         </li>
