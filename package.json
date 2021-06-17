@@ -15,6 +15,7 @@
     "@stitches/react": "0.2.0",
     "@stitches/react-alpha": "npm:@stitches/react@0.0.3-canary.4",
     "@stitches/react-v019": "npm:@stitches/react@0.1.9",
+    "@stitches/stringify": "^0.2.2",
     "d3-scale-chromatic": "^2.0.0",
     "nanoid": "^3.1.23",
     "next": "10.2.3",

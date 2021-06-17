@@ -377,6 +377,11 @@
   resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.2.0.tgz#1f186d172fa4cdd68dfc758582e3537f726ec252"
   integrity sha512-HJozXVJi+A53woKk1ePVI8iEv5zmldYGPE2hGwsXrBEo+y/aY4R/2G+xvwQPj1tVlG8LuqsyRGNfLaVSAjsumA==
 
+"@stitches/stringify@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@stitches/stringify/-/stringify-0.2.2.tgz#c84fa234760ede84b907f9a8ad70d3505577f6f2"
+  integrity sha512-pdoq1mkyG3GcNc//Oh3TB1GerrnTCHQOQRpsJAFlAHGUl/c9PVV7x0oIRP1jeSenoKC0rcB/nv+sJ97h6FRsvA==
+
 "@types/hoist-non-react-statics@*":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"

@@ -18,6 +18,9 @@ export default function Home() {
         <li>
           <Link href="change-css-prop/emotion">Emotion</Link>
         </li>
+        <li>
+          <Link href="change-css-prop/baseline">Baseline</Link>
+        </li>
       </ul>
     </div>
   );
