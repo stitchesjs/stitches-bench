@@ -5,10 +5,10 @@ export default function Home() {
     <div>
       <ul>
         <li>
-          <Link href="create-theme/stitches-react">Stitches React</Link>
+          <Link href="create-theme/stitches-react-v025">Stitches React v0.2.5</Link>
         </li>
         <li>
-          <Link href="create-theme/stitches-react-v019">Stitches React v0.1.9</Link>
+          <Link href="create-theme/stitches-react-vc17">Stitches React v1.0.0-canary.17</Link>
         </li>
       </ul>
     </div>

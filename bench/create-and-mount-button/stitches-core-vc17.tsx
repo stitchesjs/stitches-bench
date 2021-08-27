@@ -3,9 +3,15 @@ import { TestComponentProps, TestRunner } from '../TestRunner';
 import { css } from '../utils/stitches-core-v025.config';
 import { buttonStyles } from '../utils/buttonStyles';
 
-/** This test aims to measure the baseline of just using React with vanilla CSS techniques (no CSS-in-JS) */
 const Test = ({ testIndex }: TestComponentProps) => {
-  return <button style={{ '--test-index': testIndex, ...(buttonStyles as any) }}>testing</button>;
+  // This purposefully creates the styled component inside the Test component
+  // so that we can measure the time it takes using the React profiler
+  const button = css({
+    '--test-index': testIndex,
+    ...(buttonStyles as any),
+  });
+
+  return <button className={button()}>testing</button>;
 };
 
 const StitchesTest = () => {

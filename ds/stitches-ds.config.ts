@@ -1,4 +1,4 @@
-import { createCss, StitchesCss } from '@stitches/react';
+import { createStitches } from '@stitches/react-vc17';
 import {
   gray,
   mauve,
@@ -57,9 +57,9 @@ import {
   bronzeDark,
   goldDark,
 } from '@radix-ui/colors';
-export type { StitchesVariants } from '@stitches/react';
+export type { VariantProps } from '@stitches/react';
 
-const stitches = createCss({
+const stitches = createStitches({
   theme: {
     colors: {
       ...gray,
