@@ -26,7 +26,7 @@ const Test = ({ testIndex }: TestComponentProps) => {
 const StitchesTest = () => {
   return (
     <>
-      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} name="stitches-core-vc126" />
+      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} name="stitches-core-v1.2.6-canary.0" />
 
       <div style={{ opacity: 0, pointerEvents: 'none' }}>
         <button className={button()}>

@@ -74,7 +74,7 @@ export const Test = ({ testIndex }: TestComponentProps) => {
 };
 
 const StitchesTest = () => {
-  return <TestRunner numberOfRuns={3} iterationN={50} TestComponent={Test} name="stitches-react-vc126" />;
+  return <TestRunner numberOfRuns={3} iterationN={50} TestComponent={Test} name="stitches-react-v1.2.6-canary.0" />;
 };
 
 export default StitchesTest;

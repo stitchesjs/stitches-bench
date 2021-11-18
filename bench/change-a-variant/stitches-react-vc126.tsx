@@ -19,7 +19,7 @@ const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestCo
 const StitchesTest = () => {
   return (
     <>
-      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} name="stitches-react-vc126" />
+      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} name="stitches-react-v1.2.6-canary.0" />
 
       <div style={{ opacity: 0, pointerEvents: 'none' }}>
         <Button>we mount the button outside the test to make sure we're not clocking any mount time</Button>

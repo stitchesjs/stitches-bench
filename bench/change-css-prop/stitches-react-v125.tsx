@@ -24,7 +24,7 @@ const Test = ({ testIndex }: TestComponentProps) => {
 const StitchesTest = () => {
   return (
     <>
-      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} name="stitches-react-v125" />
+      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} name="stitches-react-v1.2.5" />
 
       <div style={{ opacity: 0, pointerEvents: 'none' }}>
         <Button>we mount the button outside the test to make sure we're not clocking any mount time</Button>

@@ -19,7 +19,7 @@ const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestCo
 const StitchesTest = () => {
   return (
     <>
-      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} name="stitches-core-v125" />
+      <TestRunner numberOfRuns={3} iterationN={1000} TestComponent={Test} name="stitches-core-v1.2.5" />
 
       <div style={{ opacity: 0, pointerEvents: 'none' }}>
         <button className={button()}>
