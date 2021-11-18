@@ -9,7 +9,7 @@ const calculateAverage = (results: Record<number, Result>, key: ResultKey, numbe
   return total / numberOfRuns;
 };
 
-export const TestResults = ({ testInfo }: { testInfo: TestInfo }) => {
+export const TestResults = ({ testInfo, name }: { testInfo: TestInfo, name: string }) => {
   const averageInfo: Result = {
     firstIteration: calculateAverage(testInfo.results, 'firstIteration', testInfo.numberOfRuns),
     lastIteration: calculateAverage(testInfo.results, 'lastIteration', testInfo.numberOfRuns),
@@ -45,6 +45,7 @@ export const TestResults = ({ testInfo }: { testInfo: TestInfo }) => {
         }}
       />
 
+      <div>Test name: {name}</div>
       <div>N: {testInfo.N}</div>
       <div>Ran test: {testInfo.numberOfRuns} times</div>
 

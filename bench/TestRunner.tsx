@@ -146,6 +146,7 @@ export const TestRunner = ({
   TestComponent,
   numberOfRuns,
   iterationN,
+  name,
 }: {
   /** The component to run inside the profiler */
   TestComponent: React.FunctionComponent<TestComponentProps>;
@@ -153,6 +154,8 @@ export const TestRunner = ({
   numberOfRuns: number;
   /** The N number of iterations to run inside each test */
   iterationN: number;
+  /** Name of current test case **/
+  name: string;
 }) => {
   if (typeof window === 'undefined') {
     return null;
@@ -180,7 +183,7 @@ export const TestRunner = ({
       // Test is done!
       const testInfo: TestInfo = JSON.parse(localStorage.getItem(testId));
 
-      return <TestResults testInfo={testInfo} />;
+      return <TestResults name={name} testInfo={testInfo} />;
     } else {
       // We have a test to run
 

@@ -1,4 +1,4 @@
-import { createStitches } from '@stitches/react-vc17';
+import { createStitches } from '@stitches/react-vc126';
 import {
   gray,
   mauve,
@@ -57,7 +57,7 @@ import {
   bronzeDark,
   goldDark,
 } from '@radix-ui/colors';
-export type { VariantProps } from '@stitches/react';
+export type { VariantProps } from '@stitches/react-vc126';
 
 const stitches = createStitches({
   theme: {
@@ -285,13 +285,12 @@ const stitches = createStitches({
   },
 });
 
-export type CSS = StitchesCss<typeof stitches>;
 
-export const { styled, css, theme, getCssString, global, keyframes, config } = stitches;
+export const { styled, css, createTheme, getCssText, globalCss, keyframes, config } = stitches;
 
 export const utils = config.utils;
 
-export const darkTheme = theme('dark-theme', {
+export const darkTheme = createTheme('dark-theme', {
   colors: {
     ...grayDark,
     ...mauveDark,

@@ -110,7 +110,7 @@ function SierpinskiTriangle({ testIndex, x = 0, y = 0, depth = 0, s: _s = 200 })
 }
 
 const StitchesTest = () => {
-  return <TestRunner numberOfRuns={3} iterationN={50} TestComponent={SierpinskiTriangle as any} />;
+  return <TestRunner numberOfRuns={3} iterationN={50} TestComponent={SierpinskiTriangle as any} name="emotion" />;
 };
 
 export default StitchesTest;
