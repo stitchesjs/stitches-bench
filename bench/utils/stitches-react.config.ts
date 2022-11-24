@@ -1,4 +1,6 @@
-export const config = {
+import { createStitches } from '@stitches/react';
+
+export const { css, createTheme, getCssText, globalCss, keyframes, styled, theme } = createStitches({
   theme: {
     colors: {
       // semantic colors
@@ -114,126 +116,127 @@ export const config = {
     light: '(prefers-color-scheme: light)',
   },
   utils: {
-    p: (config) => (value: any) => ({
+    p: (value: any) => ({
       paddingTop: value,
       paddingBottom: value,
       paddingLeft: value,
       paddingRight: value,
     }),
-    pt: (config) => (value: any) => ({
+    pt: (value: any) => ({
       paddingTop: value,
     }),
-    pr: (config) => (value: any) => ({
+    pr: (value: any) => ({
       paddingRight: value,
     }),
-    pb: (config) => (value: any) => ({
+    pb: (value: any) => ({
       paddingBottom: value,
     }),
-    pl: (config) => (value: any) => ({
+    pl: (value: any) => ({
       paddingLeft: value,
     }),
-    px: (config) => (value: any) => ({
+    px: (value: any) => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    py: (config) => (value: any) => ({
+    py: (value: any) => ({
       paddingTop: value,
       paddingBottom: value,
     }),
 
-    m: (config) => (value: any) => ({
+    m: (value: any) => ({
       marginTop: value,
       marginBottom: value,
       marginLeft: value,
       marginRight: value,
     }),
-    mt: (config) => (value: any) => ({
+    mt: (value: any) => ({
       marginTop: value,
     }),
-    mr: (config) => (value: any) => ({
+    mr: (value: any) => ({
       marginRight: value,
     }),
-    mb: (config) => (value: any) => ({
+    mb: (value: any) => ({
       marginBottom: value,
     }),
-    ml: (config) => (value: any) => ({
+    ml: (value: any) => ({
       marginLeft: value,
     }),
-    mx: (config) => (value: any) => ({
+    mx: (value: any) => ({
       marginLeft: value,
       marginRight: value,
     }),
-    my: (config) => (value: any) => ({
+    my: (value: any) => ({
       marginTop: value,
       marginBottom: value,
     }),
 
-    ta: (config) => (value: any) => ({ textAlign: value }),
+    ta: (value: any) => ({ textAlign: value }),
 
-    fd: (config) => (value: any) => ({ flexDirection: value }),
-    fw: (config) => (value: any) => ({ flexWrap: value }),
+    fd: (value: any) => ({ flexDirection: value }),
+    fw: (value: any) => ({ flexWrap: value }),
 
-    ai: (config) => (value: any) => ({ alignItems: value }),
-    ac: (config) => (value: any) => ({ alignContent: value }),
-    jc: (config) => (value: any) => ({ justifyContent: value }),
-    as: (config) => (value: any) => ({ alignSelf: value }),
-    fg: (config) => (value: any) => ({ flexGrow: value }),
-    fs: (config) => (value: any) => ({ flexShrink: value }),
-    fb: (config) => (value: any) => ({ flexBasis: value }),
+    ai: (value: any) => ({ alignItems: value }),
+    ac: (value: any) => ({ alignContent: value }),
+    jc: (value: any) => ({ justifyContent: value }),
+    as: (value: any) => ({ alignSelf: value }),
+    fg: (value: any) => ({ flexGrow: value }),
+    fs: (value: any) => ({ flexShrink: value }),
+    fb: (value: any) => ({ flexBasis: value }),
 
-    bc: (config) => (value: any) => ({
+    bc: (value: any) => ({
       backgroundColor: value,
     }),
 
-    br: (config) => (value: any) => ({
+    br: (value: any) => ({
       borderRadius: value,
     }),
-    btrr: (config) => (value: any) => ({
+    btrr: (value: any) => ({
       borderTopRightRadius: value,
     }),
-    bbrr: (config) => (value: any) => ({
+    bbrr: (value: any) => ({
       borderBottomRightRadius: value,
     }),
-    bblr: (config) => (value: any) => ({
+    bblr: (value: any) => ({
       borderBottomLeftRadius: value,
     }),
-    btlr: (config) => (value: any) => ({
+    btlr: (value: any) => ({
       borderTopLeftRadius: value,
     }),
 
-    bs: (config) => (value: any) => ({ boxShadow: value }),
+    bs: (value: any) => ({ boxShadow: value }),
 
-    lh: (config) => (value: any) => ({ lineHeight: value }),
+    lh: (value: any) => ({ lineHeight: value }),
 
-    ox: (config) => (value: any) => ({ overflowX: value }),
-    oy: (config) => (value: any) => ({ overflowY: value }),
+    ox: (value: any) => ({ overflowX: value }),
+    oy: (value: any) => ({ overflowY: value }),
 
-    pe: (config) => (value: any) => ({ pointerEvents: value }),
-    us: (config) => (value: any) => ({ WebkitUserSelect: value, userSelect: value }),
+    pe: (value: any) => ({ pointerEvents: value }),
+    us: (value: any) => ({ WebkitUserSelect: value, userSelect: value }),
 
-    size: (config) => (value: any) => ({
+    size: (value: any) => ({
       width: value,
       height: value,
     }),
 
-    linearGradient: (config) => (value: any) => ({
+    linearGradient: (value: any) => ({
       backgroundImage: `linear-gradient(${value})`,
     }),
 
-    appearance: (config) => (value) => ({
+    appearance: (value: any) => ({
       WebkitAppearance: value,
       appearance: value,
     }),
-    userSelect: (config) => (value) => ({
+    userSelect: (value: any) => ({
       WebkitUserSelect: value,
       userSelect: value,
     }),
-    backgroundClip: (config) => (value) => ({
+    backgroundClip: (value: any) => ({
       WebkitBackgroundClip: value,
       backgroundClip: value,
     }),
   },
-};
+});
+
 
 export const darkThemeConfig = {
   colors: {
@@ -289,3 +292,5 @@ export const darkThemeConfig = {
     green1000: 'hsl(137 72% 94%)',
   },
 };
+
+export const darkTheme = createTheme('dark-theme', darkThemeConfig);

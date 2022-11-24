@@ -26,7 +26,7 @@
 import React from 'react';
 import { TestRunner } from '../TestRunner';
 import { interpolatePurples, interpolateBuPu, interpolateRdPu } from 'd3-scale-chromatic';
-import { styled } from '../utils/stitches-react-v025.config';
+import { styled } from '../utils/stitches-react.config';
 
 const View = styled('div', {
   alignItems: 'stretch',
@@ -51,7 +51,7 @@ const Dot = styled(View, {
   height: '0',
   borderColor: 'transparent',
   borderStyle: 'solid',
-  borderTopWidth: '0',
+  borderTopWidth: 0,
   transform: 'translate(50%, 50%)',
 });
 
@@ -81,11 +81,11 @@ export function SierpinskiTriangle({ testIndex, x = 0, y = 0, depth = 0, s: _s =
         <Dot
           css={{
             borderBottomColor: color,
-            borderRightWidth: `${targetSize / 2}px`,
-            borderBottomWidth: `${targetSize / 2}px`,
-            borderLeftWidth: `${targetSize / 2}px`,
-            marginLeft: `${x - targetSize / 2}px`,
-            marginTop: `${y - targetSize / 2}px`,
+            borderRightWidth: targetSize / 2,
+            borderBottomWidth: targetSize / 2,
+            borderLeftWidth: targetSize / 2,
+            marginLeft: x - targetSize / 2,
+            marginTop: y - targetSize / 2,
           }}
         />
       );

@@ -1,19 +1,24 @@
 import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
-import { buttonStyles, buttonVariants } from '../utils/buttonStyles';
-import { styled } from '../utils/stitches-react-v025.config';
+import { buttonStyles } from '../utils/buttonStyles';
+import { styled } from '../utils/stitches-react.config';
 
 const Button = styled('button', {
   ...(buttonStyles as any),
-  ...(buttonVariants as any),
 });
 
-const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestComponentProps) => {
-  const variants = {
-    variant: testIndex % 2 === 0 ? 'red' : 'blue',
-    size: testIndex % 2 === 0 ? '1' : '2',
-  };
-  return <Button {...variants}>testing</Button>;
+const Test = ({ testIndex }: TestComponentProps) => {
+  return (
+    <Button
+      css={{
+        '--test-index': testIndex,
+        backgroundColor: `hsl(${Math.floor(Math.random() * 360)} 80% 80%)`,
+        padding: '20px',
+      }}
+    >
+      testing
+    </Button>
+  );
 };
 
 const StitchesTest = () => {

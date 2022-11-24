@@ -1,7 +1,7 @@
 import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
 import { Tree } from '../utils/Tree';
-import { styled } from '../utils/stitches-react-vc17.config';
+import { styled } from '../utils/stitches-react.config';
 
 export const Test = ({ testIndex }: TestComponentProps) => {
   // This purposefully creates the styled component inside the Test component

@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 
 const CreateAndMountComponent = () => {
-  const StitchesTest = dynamic(() => import('../../bench/create-theme/stitches-react-vc17'), { ssr: false });
+  const StitchesTest = dynamic(() => import('../../bench/change-a-variant/stitches-react'), { ssr: false });
 
   return <StitchesTest />;
 };

@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 
 const SierpinskiTriangle = () => {
-  const StitchesTest = dynamic(() => import('../../bench/mount-deep-tree/stitches-react-v025'), { ssr: false });
+  const StitchesTest = dynamic(() => import('../../bench/mount-wide-tree/stitches-react'), { ssr: false });
 
   return <StitchesTest />;
 };

@@ -1,17 +1,21 @@
 import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
-import { styled } from '../utils/stitches-react-v025.config';
-import { buttonStyles } from '../utils/buttonStyles';
+import { createTheme } from '../utils/stitches-react.config';
 
 const Test = ({ testIndex }: TestComponentProps) => {
   // This purposefully creates the styled component inside the Test component
   // so that we can measure the time it takes using the React profiler
-  const Button = styled('button', {
-    '--test-index': testIndex,
-    ...(buttonStyles as any),
+  const testTheme = createTheme('test-theme', {
+    space: {
+      1: `${testIndex}px`,
+    },
   });
 
-  return <Button>testing</Button>;
+  return (
+    <div className={testTheme} style={{ marginTop: 'var(--space-1)' }}>
+      testing
+    </div>
+  );
 };
 
 const StitchesTest = () => {
