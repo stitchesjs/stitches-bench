@@ -3,7 +3,7 @@ import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
 import { buttonStyles, buttonInterpolatedVariants } from '../utils/buttonStyles';
 
-import css from "../utils/button.module.css"
+import css from "../utils/button.module.css";
 // import styled from 'styled-components';
 
 // const Button = styled('button')((props) => ({
