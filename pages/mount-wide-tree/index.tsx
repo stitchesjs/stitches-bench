@@ -6,6 +6,9 @@ export default function Home() {
     <div>
       <ul>
         <li>
+          <Link href="mount-wide-tree/css-components">CSS Components</Link>
+        </li>
+        <li>
           <Link href="mount-wide-tree/stitches-react-v025">Stitches React v0.2.5</Link>
         </li>
         <li>

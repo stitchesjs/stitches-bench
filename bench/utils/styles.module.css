@@ -1,0 +1,63 @@
+.view {
+  align-items: stretch;
+  border-width: 0;
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 0;
+  min-width: 0;
+}
+
+.box {
+  align-self: flex-start;
+}
+
+.box_layout_column {
+  flex-direction: column;
+}
+
+.box_layout_row {
+  flex-direction: row;
+}
+
+.box_outer_true {
+  padding: 4px;
+}
+
+.box_fixed_true {
+  height: 6px;
+  width: 6px;
+}
+
+.box_color_0 {
+  background-color: #14171A;
+}
+
+.box_color_1{
+  background-color: #AAB8C2;
+}
+
+.box_color_2{
+  background-color: #E6ECF0;
+}
+
+.box_color_3{
+  background-color: #FFAD1F;
+}
+
+.box_color_4{
+  background-color: #F45D22;
+}
+
+.box_color_5{
+  background-color: #E0245E;
+}
+
+
+
