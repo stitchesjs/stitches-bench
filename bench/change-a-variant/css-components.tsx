@@ -4,12 +4,6 @@ import { TestComponentProps, TestRunner } from '../TestRunner';
 import { buttonStyles, buttonInterpolatedVariants } from '../utils/buttonStyles';
 
 import css from "../utils/button.module.css";
-// import styled from 'styled-components';
-
-// const Button = styled('button')((props) => ({
-//   ...(buttonStyles as any),
-//   ...(buttonInterpolatedVariants(props) as any),
-// }));
 
 const Button = styled('button', {
   css: css.buttonStyles,
@@ -26,10 +20,6 @@ const Button = styled('button', {
 });
 
 const Test: React.FunctionComponent<TestComponentProps> = ({ testIndex }: TestComponentProps) => {
-  // const variants = {
-  //   variant: testIndex % 2 === 0 ? 'red' : 'blue',
-  //   size: testIndex % 2 === 0 ? '1' : '2',
-  // };
   return <Button variant={testIndex % 2 === 0 ? 'red' : 'blue'} size={testIndex % 2 === 0 ? '1' : '2'}>testing</Button>;
 };
 

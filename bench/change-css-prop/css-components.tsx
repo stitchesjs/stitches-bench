@@ -12,7 +12,6 @@ const Test = ({ testIndex }: TestComponentProps) => {
   return (
     <Button
       style={{
-        // '--test-index': testIndex,
         backgroundColor: `hsl(${Math.floor(Math.random() * 360)} 80% 80%)`,
         padding: '20px',
       }}
