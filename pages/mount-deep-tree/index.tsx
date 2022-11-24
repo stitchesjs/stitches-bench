@@ -6,6 +6,9 @@ export default function Home() {
     <div>
       <ul>
         <li>
+          <Link href="mount-deep-tree/css-components">CSS components</Link>
+        </li>
+        <li>
           <Link href="mount-deep-tree/stitches-react-v025">Stitches React v0.2.5</Link>
         </li>
         <li>

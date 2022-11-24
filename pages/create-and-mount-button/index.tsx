@@ -4,6 +4,9 @@ export default function Home() {
     <div>
       <ul>
         <li>
+          <Link href="create-and-mount-button/css-components">CSS Components</Link>
+        </li>
+        <li>
           <Link href="create-and-mount-button/stitches-core-v025">Stitches Core v0.2.5</Link>
         </li>
         <li>

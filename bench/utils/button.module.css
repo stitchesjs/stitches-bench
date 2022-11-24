@@ -1,0 +1,71 @@
+.testButton {
+  all: unset;
+  align-items: center;
+  box-sizing: border-box;
+  user-select: none;
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  font-family: system-ui;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  background-color: white;
+  box-shadow: inset 0 0 0 1px gray;
+  color: black;
+  border-radius: 3px;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  line-height: 25px;
+}
+
+
+
+.testButton::before {
+  box-sizing: 'border-box;
+}
+
+.testButton::after {
+  box-sizing: 'border-box;
+}
+
+.testButton:disabled {
+  background-color: gray;
+  box-shadow: inset 0 0 0 1px gray;
+  color: gray;
+  pointer-events: none;
+}
+.testButton:hover {
+  box-shadow: inset 0 0 0 1px gray;
+}
+
+.testButton:active {
+  background-color: gray;
+  box-shadow: inset 0 0 0 1px gray;
+}
+
+.testButton:focus {
+  box-shadow: inset 0 0 0 1px gray, 0 0 0 1px gray;
+}
+
+.testButton[data-radix-popover-trigger][data-state="open"] {
+  background-color: gray;
+  box-shadow: inset 0 0 0 1px gray;
+}
+
+.red{
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.big {
+  font-size: 20px;
+}
+
+.small {
+  font-size: 10px;
+}

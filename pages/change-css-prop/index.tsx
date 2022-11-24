@@ -4,6 +4,9 @@ export default function Home() {
     <div>
       <ul>
         <li>
+          <Link href="change-css-prop/css-components">CSS Components</Link>
+        </li>
+        <li>
           <Link href="change-css-prop/stitches-core-v025">Stitches Core v0.2.5</Link>
         </li>
         <li>
