@@ -2,7 +2,7 @@ import { styled } from '@phntms/css-components';
 import React from 'react';
 import { TestComponentProps, TestRunner } from '../TestRunner';
 
-import css from "../utils/button.module.css"
+import css from "../utils/button.module.css";
 
 const Test = ({ testIndex }: TestComponentProps) => {
   // This purposefully creates the styled component inside the Test component
