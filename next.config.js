@@ -2,8 +2,13 @@
 // See: https://kentcdodds.com/blog/profile-a-react-app-for-performance#build-and-measure-the-production-app
 // See: https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
 const { TerserPlugin } = require('next/dist/compiled/terser');
+const {
+  createVanillaExtractPlugin
+} = require('@vanilla-extract/next-plugin');
+const withVanillaExtract = createVanillaExtractPlugin();
 
-module.exports = {
+
+module.exports = withVanillaExtract({
   future: {
     webpack5: true,
   },
@@ -34,4 +39,4 @@ module.exports = {
 
     return config;
   },
-};
+});
